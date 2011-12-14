@@ -1,0 +1,6 @@
+## [Dispatcher Module]()
+- [Core](core/index)
+	- [Dispatcher](core/dispatcher)
+	- [Event](core/event)
+	- [Listeners](core/listeners)
+- [Examples](examples)
