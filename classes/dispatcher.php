@@ -14,21 +14,24 @@
 class Dispatcher extends Core_Dispatcher
 {
 	/**
+	 * @var Dispatcher
+	 */
+	private static $_instance;
+	
+	/**
 	 * Gets the global dispatcher instance
 	 * 
 	 * @return Dispatcher
 	 */
-	static function instance()
-	{
-		static $instance = NULL;
+	 public static function instance() 
+    {
+        if (!isset(self::$_instance)) {
+            $CLS = __CLASS__;
+            self::$_instance = new $CLS;
+        }
 
-		if($instance === NULL)
-		{
-			$instance = new Dispatcher();
-		}
-
-		return $instance;
-	}
+        return self::$_instance;
+    }
 	
 	/**
 	 * Returns a factory instance of Dispatcher
