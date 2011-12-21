@@ -106,7 +106,6 @@ abstract class Core_Dispatcher Implements Interface_Dispatcher
 		{
 			foreach($this->_listeners[$event->type] as $listener)
 			{
-				echo $listener->priority."<br/>";
 				call_user_func($listener->callback, $event);
 				
 				if($allow_stop_propagation AND $event->stop_propagation)
