@@ -79,7 +79,7 @@ abstract class Core_Event
 			throw new Kohana_Exception('Cannot access protected member variable :var', array(':var' => $var));
 		}
 		
-		if(isset( $this->$var))
+		if(isset($this->$var))
 		{
 			 return $this->$var;
 		}
@@ -89,7 +89,9 @@ abstract class Core_Event
 		} 
 		else 
 		{
-			return NULL;	
+			//$var = $var.':<br/>'.Kohana_Debug::dump($this->_data);
+			$var = '';
+			return $var;	
 		}
 	}
 	
